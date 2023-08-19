@@ -1,0 +1,26 @@
+<div *ngIf="beers" class="beers-container">
+  <div *ngFor="let beer of beers">
+    <mat-card class="example-card" color="secondary">
+      <mat-card-header>
+        <input type="hidden" class="id" value={{beer.id}}>
+        <mat-card-title>{{beer.name}}</mat-card-title>
+        <mat-card-subtitle>{{beer.tagline}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src={{beer.image_url}} alt={{beer.name}}>
+      <mat-card-content>
+        <p class="first_brewed">{{beer.first_brewed}}</p>
+        <p class=" yeast">
+          {{beer.yeast}}
+
+        </p>
+        <p class="description">
+          {{beer.description}}
+        </p>
+        <p class="brewers_tips">
+          {{beer.brewers_tips}}
+
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
