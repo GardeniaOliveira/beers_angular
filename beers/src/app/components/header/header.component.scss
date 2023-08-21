@@ -1,4 +1,22 @@
-.header {
-  background-color: transparent;
-  position: absolute;
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,100&display=swap");
+
+.header-mat {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background: rgb(251, 212, 85);
+  background: linear-gradient(118deg, #efc701 0%, #c9870c 95%);
+  margin-top: -6px;
+}
+h1 {
+  font-family: "Grandstander", cursive;
+  font-weight: bolder;
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+.banner {
+  width: 100%;
 }
