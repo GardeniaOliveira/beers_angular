@@ -1,8 +1,9 @@
 .example-card {
-  max-width: 330px;
+  max-width: 180px;
+  width: 90vw;
   background-color: #c9870c;
-  color: black;
-  height: 540px;
+  color: #000000;
+  height: 430px;
   overflow: hidden;
 }
 
@@ -11,7 +12,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 3em;
+  gap: 3em 2em;
 }
 
 .beers-container img {
@@ -19,4 +20,31 @@
   width: auto;
   margin: 0 auto;
   display: flex;
+}
+
+button {
+  background-color: black;
+  color: #c9870c;
+  width: 100%;
+}
+
+button:hover {
+  background-color: white;
+}
+
+.test {
+  overflow: hidden;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-card-header-text,
+.mat-card-header .mat-card-subtitle:not(:first-child) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
 }
