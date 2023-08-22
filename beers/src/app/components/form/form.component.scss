@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 100%;
+    background-color: black;
+    color: white;
+  }
+  button:hover {
+    background-color: #d9a208;
+  }
+}
