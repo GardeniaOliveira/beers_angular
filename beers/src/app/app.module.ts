@@ -13,6 +13,8 @@ import { CardComponent } from './components/card/card.component';
 import { CardsTemplateComponent } from './components/cards-template/cards-template.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { ProductComponent } from './components/pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HeaderComponent } from './components/header/header.component';
     CardComponent,
 
     CardsTemplateComponent,
+     HomeComponent,
+     ProductComponent,
   ],
   imports: [
     BrowserModule,
