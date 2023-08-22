@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +25,8 @@ import { ProductComponent } from './components/pages/product/product.component';
     CardComponent,
 
     CardsTemplateComponent,
-     HomeComponent,
-     ProductComponent,
+    HomeComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +37,7 @@ import { ProductComponent } from './components/pages/product/product.component';
     HttpClientModule,
     MatMenuModule,
     MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

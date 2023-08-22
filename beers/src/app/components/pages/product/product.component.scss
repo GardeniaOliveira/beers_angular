@@ -9,11 +9,20 @@
   img {
     height: 60vh;
   }
-  .mat-card-header .mat-card-title {
+  .mat-card-header .mat-card-title,
+  .mat-card-subtitle {
     display: block;
+    padding-bottom: 0.5rem;
   }
   .content {
-    // padding: 1.4rem;
-    width: 60vw;
+    width: 64vw;
+  }
+  .example-flex-container {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+  }
+  span {
+    font-weight: 500;
   }
 }
