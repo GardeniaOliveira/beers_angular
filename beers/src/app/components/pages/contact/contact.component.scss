@@ -1,8 +1,16 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 2em 0;
-  gap: 2em;
+  margin: 1em auto;
+  width: 90vw;
+  height: 70vh;
+}
+.example-button-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem 0;
+
 }

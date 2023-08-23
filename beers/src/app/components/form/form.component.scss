@@ -5,6 +5,8 @@ form {
   align-content: center;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
+  width: 80vw;
 
   button {
     width: 100%;
@@ -13,5 +15,8 @@ form {
   }
   button:hover {
     background-color: #d9a208;
+  }
+  .mat-form-field {
+    width: 100%;
   }
 }

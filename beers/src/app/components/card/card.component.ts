@@ -3,8 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Beer } from 'src/app/Beers';
 import { BeersService } from 'src/app/services/beers.service';
 
-
-
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -25,6 +23,6 @@ export class CardComponent implements OnInit {
 
   //click in read more and redirect to the product page
   showProduct(id: number) {
-    this.router.navigate([`/${id}`]);
+    this.router.navigate([`/beer/${id}`]);
   }
 }
