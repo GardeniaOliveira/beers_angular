@@ -28,6 +28,7 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { ProductComponent } from './components/pages/product/product.component';
+import { FavoriteComponent } from './components/pages/favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +36,14 @@ import { ProductComponent } from './components/pages/product/product.component';
     HeaderComponent,
     FooterComponent,
     CardComponent,
-
     CardsTemplateComponent,
     HomeComponent,
     ProductComponent,
     AboutComponent,
     ContactComponent,
     FormComponent,
+
+    FavoriteComponent,
   ],
   imports: [
     BrowserModule,

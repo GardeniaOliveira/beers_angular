@@ -1,22 +1,25 @@
 <mat-card>
-  <form>
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="fullwidth">
       <mat-label>Enter your name</mat-label>
-      <input matInput placeholder="jaime fraser" required>
-      <!-- <input matInput placeholder="pat@example.com" [formControl]="name" required> -->
-      <!-- <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error> -->
+      <input matInput placeholder="jaime fraser" formControlName="name" required>
+      <!-- <mat-error *ngIf="name.touched" || submitted>{{getErrorMessageName()}}</mat-error> -->
+      <mat-error *ngIf="name.touched|| submitted">Name is required
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="fullwidth">
       <mat-label>Enter your email</mat-label>
-      <!-- <input matInput placeholder="pat@example.com" [formControl]="email" required> -->
-      <input matInput placeholder="pat@example.com" required>
-      <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      <input matInput placeholder="pat@example.com" formControlName="email" required>
+
+      <mat-error *ngIf="email.invalid || submitted">Email is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="fullwidth">
       <mat-label>Textarea</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput formControlName="message"></textarea>
+      <mat-error *ngIf="message.touched ||submitted ">Message is required</mat-error>
+      <mat-error *ngIf="message.errors?.['minlength']">The message needs at least 10 characters</mat-error>
     </mat-form-field>
     <button type="submit" mat-raised-button>Send</button>
   </form>
