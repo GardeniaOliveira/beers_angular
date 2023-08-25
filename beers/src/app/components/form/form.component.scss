@@ -11,7 +11,9 @@ form {
   .mat-card {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
   }
-
+  .mat-error {
+    margin-bottom: 1rem;
+  }
   button {
     width: 100%;
     background-color: black;
@@ -22,5 +24,29 @@ form {
   }
   .mat-form-field {
     width: 100%;
+  }
+}
+.card-message {
+  width: 80%;
+  display: block;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 1rem auto;
+  z-index: 1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #c9870c;
+
+  h3 {
+    font-weight: bold;
+    text-align: center;
+  }
+  span {
+    font-weight: 500;
+  }
+  .mat-card-content {
+    overflow: hidden;
   }
 }

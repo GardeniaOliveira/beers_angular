@@ -1,5 +1,5 @@
 <mat-card>
-  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="messageForm" (ngSubmit)="Submit()">
     <mat-form-field class="fullwidth">
       <mat-label>Enter your name</mat-label>
       <input matInput placeholder="jaime fraser" formControlName="name" required>
@@ -23,4 +23,28 @@
     </mat-form-field>
     <button type="submit" mat-raised-button>Send</button>
   </form>
+
+
+
+
+  <div *ngIf="submitted" class="message">
+    <mat-card class=" example-card card-message">
+
+      <h3>Thank you for your message!</h3>
+      <p>We answer as soon as possible</p>
+
+      <mat-card-content>
+        <span>Name:</span>
+        {{messageForm.value.name}}
+      </mat-card-content>
+      <mat-card-content>
+        <span>E-mail:</span>
+        {{messageForm.value.email}}
+      </mat-card-content>
+      <mat-card-content>
+        <span>Message:</span>
+        {{messageForm.value.message}}
+      </mat-card-content>
+    </mat-card>
+  </div>
 </mat-card>

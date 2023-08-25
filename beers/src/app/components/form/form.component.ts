@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Form } from 'src/app/Form';
 
@@ -9,38 +10,24 @@ import { Form } from 'src/app/Form';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  // @Output() onSubmit = new EventEmitter<Form>();
+  @Output() onSubmit = new EventEmitter<Form>();
+
+  //declare the form with date from html
   messageForm!: FormGroup;
   submitted = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.messageForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      message: new FormControl('', [Validators.required,  Validators.minLength(10),]),
+      message: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10),
+      ]),
     });
   }
-
-  // getErrorMessageName() {
-  //   if (this.name.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-  //   return this.name.hasError('name') ? 'Not a valid name' : '';
-  // }
-  // getErrorMessageEmail() {
-  //   if (this.email.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-  //   return this.email.hasError('email') ? 'Not a valid email' : '';
-  // }
-  // getErrorMessage() {
-  //   if (this.message.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-  //   return this.message.hasError('message') ? 'Not a valid message' : '';
-  // }
 
   get name() {
     return this.messageForm.get('name')!;
@@ -54,11 +41,16 @@ export class FormComponent implements OnInit {
     return this.messageForm.get('message')!;
   }
 
-  onSubmit() {
+  Submit() {
     this.submitted = true;
     if (this.messageForm.invalid) {
       return;
     }
     console.table(this.messageForm.value);
+
+    this.onSubmit.emit(this.messageForm.value);
+
+    // this.router.navigate(['contact/message']);
+    // this.messageForm.reset();
   }
 }
