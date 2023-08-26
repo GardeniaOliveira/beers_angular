@@ -9,7 +9,7 @@ import { Beer } from 'src/app/Beers';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-    //here is not more a [] of beers, but only one beer
+  //here is not more a [] of beers, but only one beer
   beer?: Beer;
   constructor(
     private beersService: BeersService,
@@ -17,13 +17,18 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-     //get the specific id
+    //get the specific id
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.beersService
-      .getBeers()
-      .subscribe(
-        //the element is a beer with id, title, description etc. in this case we compare the same id
-        (item) => (this.beer = item.find((element) => element.id === id))
-      );
+    this.beersService.getBeers().subscribe(
+      //the element is a beer with id, title, description etc. in this case we compare the same id
+      (item) => (this.beer = item.find((element) => element.id === id))
+    );
+  }
+
+  saveFavorite() {
+    console.log('saveFavorite');
+    let data:any = [{beer:this.beer}];
+
+    localStorage.setItem('favorite', JSON.stringify(data));
   }
 }

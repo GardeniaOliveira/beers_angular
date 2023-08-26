@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { FavoriteComponent } from './components/pages/favorite/favorite.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { ProductComponent } from './components/pages/product/product.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,8 @@ import { ProductComponent } from './components/pages/product/product.component';
     AboutComponent,
     ContactComponent,
     FormComponent,
-
     FavoriteComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import { ProductComponent } from './components/pages/product/product.component';
     ReactiveFormsModule,
     NgIf,
     MatGridListModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

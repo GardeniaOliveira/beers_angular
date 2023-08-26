@@ -1,4 +1,11 @@
 <div class="container">
   <h2>Your favorite beers!</h2>
-  <app-card></app-card>
+  <div *ngIf="favorite">
+    <app-table
+    [name]="favorite[0].beer.name"
+    ></app-table>
+    <!-- <p>{{favorite[0].beer.name}}</p> -->
+    <!-- <app-card></app-card> -->
+  </div>
+
 </div>
