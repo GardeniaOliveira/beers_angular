@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { Form } from 'src/app/Form';
 
 @Component({
@@ -25,6 +24,7 @@ export class FormComponent implements OnInit {
       message: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
+        Validators.maxLength(100),
       ]),
     });
   }
@@ -47,10 +47,8 @@ export class FormComponent implements OnInit {
       return;
     }
     console.table(this.messageForm.value);
-
-    this.onSubmit.emit(this.messageForm.value);
-
-    // this.router.navigate(['contact/message']);
-    // this.messageForm.reset();
+  }
+  closeMessage() {
+    window.location.reload();
   }
 }

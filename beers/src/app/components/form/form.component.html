@@ -20,6 +20,7 @@
       <textarea matInput formControlName="message"></textarea>
       <mat-error *ngIf="message.touched ||submitted ">Message is required</mat-error>
       <mat-error *ngIf="message.errors?.['minlength']">The message needs at least 10 characters</mat-error>
+      <mat-error *ngIf="message.errors?.['maxlength']">Write a message less than 100 characters</mat-error>
     </mat-form-field>
     <button type="submit" mat-raised-button>Send</button>
   </form>
@@ -28,6 +29,7 @@
 
 
   <div *ngIf="submitted" class="message">
+    <a mat-button (click)="closeMessage()"> <mat-icon>close</mat-icon></a>
     <mat-card class=" example-card card-message">
 
       <h3>Thank you for your message!</h3>
