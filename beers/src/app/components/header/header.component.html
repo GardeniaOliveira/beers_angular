@@ -4,11 +4,28 @@
       <h1>BEERS</h1>
 
     </div>
-    <div class="links">
+    <div class="links full-menu">
       <a mat-button routerLink="/">Home</a>
       <a mat-button routerLink="about">About</a>
       <a mat-button routerLink="contact">Contact</a>
       <a mat-button routerLink="favorite"> <mat-icon>favorite</mat-icon></a>
+
+    </div>
+
+
+    <div class="example-container ">
+      <mat-toolbar  class="example-toolbar sidebar">
+        <button mat-icon-button (click)="snavToggle()"><mat-icon>menu</mat-icon></button>
+      </mat-toolbar>
+
+      <mat-sidenav-container class="example-sidenav-container" [style]="toggle ? 'display: block': 'display: none '">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/">Home</a>
+          <a mat-list-item routerLink="about">About</a>
+          <a mat-list-item routerLink="contact">Contact</a>
+          <a mat-list-item routerLink="favorite"> <mat-icon>favorite</mat-icon></a>
+        </mat-nav-list>
+      </mat-sidenav-container>
 
     </div>
   </mat-toolbar>

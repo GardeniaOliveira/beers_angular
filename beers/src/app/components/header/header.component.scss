@@ -16,3 +16,22 @@ h1 {
 .banner {
   width: 100%;
 }
+.mat-drawer-container {
+  position: absolute !important;
+}
+.mat-toolbar-single-row {
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .full-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 760px) {
+  .example-container,
+  .sidebar {
+    display: none;
+  }
+}
