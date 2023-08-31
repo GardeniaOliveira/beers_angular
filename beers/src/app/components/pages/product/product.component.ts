@@ -37,4 +37,8 @@ export class ProductComponent implements OnInit {
     //save the data again
     localStorage.setItem('favorite', JSON.stringify(newData));
   }
+
+  shareOnSocialMedia() {
+    console.log('share on social media');
+  }
 }
