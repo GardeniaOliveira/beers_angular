@@ -1,28 +1,39 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-
-  <!-- btn-->
-  <ng-container matColumnDef="btn">
-    <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell class="td-button" *matCellDef="let element">
-      <button mat-raised-button (click)="removeFavorite(element.id)">Remove</button>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-  </tr>
+<div *ngIf="dataSource.length == 0; else showTable">
+  <div class="alert">
+    <p>You do not have any favorites yet</p>
+  </div>
 
 
-</table>
+</div>
+
+<ng-template #showTable>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- btn-->
+    <ng-container matColumnDef="btn">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell class="td-button" *matCellDef="let element">
+        <button mat-raised-button (click)="removeFavorite(element.id)">Remove</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+
+
+  </table>
+</ng-template>

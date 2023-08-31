@@ -37,8 +37,7 @@ export class TableComponent implements OnInit {
     //save the data again in local storage without the beer removed
     localStorage.setItem('favorite', JSON.stringify(removeBeer));
 
-    // this.dataSource.name = removeBeer;
-
+    // do a map again with the new array without the beer removed to show the data on the screen
 this.dataSource = removeBeer.map(
       (beer, index: number) => ({
         position: index + 1,
