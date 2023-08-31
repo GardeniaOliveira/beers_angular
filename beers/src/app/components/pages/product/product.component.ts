@@ -25,10 +25,16 @@ export class ProductComponent implements OnInit {
     );
   }
 
+  //save data on the local storage
   saveFavorite() {
+    //get all in the local storage
+    const data = JSON.parse(localStorage.getItem('favorite') || '[]');
     console.log('saveFavorite');
-    let data:any = [{beer:this.beer}];
 
-    localStorage.setItem('favorite', JSON.stringify(data));
+    //create a new array to store the data from local storage and the beer clicked
+    const newData = data.concat(this.beer);
+
+    //save the data again
+    localStorage.setItem('favorite', JSON.stringify(newData));
   }
 }

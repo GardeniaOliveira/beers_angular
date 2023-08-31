@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Beer } from 'src/app/Beers';
 
 @Component({
   selector: 'app-table',
@@ -7,12 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   @Input()
-  name!: string;
+   //array with all bears
+  beers!: Beer[];
 
-  displayedColumns: string[] = ['name'];
+
+  displayedColumns: string[] = ['position', 'name'];
+
+  dataSource: any = [];
+
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.name);
+    console.log(this.beers);
+    //we receive beer as a prop in favorite and do a map 
+    this.dataSource = this.beers.map((beer, index) =>({ position: index+1, name: beer.name}))
   }
 }
