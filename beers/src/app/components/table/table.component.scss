@@ -1,4 +1,19 @@
 table {
-  width: 50vw;
+  width: 80vw;
   margin: 0 auto;
+
+  .td-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  button {
+    margin: 0.5rem 0;
+    background-color: black;
+    color: #c9870c;
+  }
+  button:hover {
+    color: black;
+    background-color: #c9870c;
+  }
 }
