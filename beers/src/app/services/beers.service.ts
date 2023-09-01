@@ -9,6 +9,7 @@ import { Beer } from '../Beers';
   providedIn: 'root',
 })
 export class BeersService {
+  // @ts-ignore
   private apiUrl = environment.baseApiUrl;
 
   constructor(private http: HttpClient) {}
