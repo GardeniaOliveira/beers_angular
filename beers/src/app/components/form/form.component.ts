@@ -42,9 +42,10 @@ export class FormComponent implements OnInit {
   }
 
   Submit() {
-    this.submitted = true;
     if (this.messageForm.invalid) {
       return;
+    } else {
+      this.submitted = true;
     }
     console.table(this.messageForm.value);
   }

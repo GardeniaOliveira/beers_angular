@@ -3,7 +3,6 @@
     <mat-form-field class="fullwidth">
       <mat-label>Enter your name</mat-label>
       <input matInput placeholder="jaime fraser" formControlName="name" required>
-      <!-- <mat-error *ngIf="name.touched" || submitted>{{getErrorMessageName()}}</mat-error> -->
       <mat-error *ngIf="name.touched|| submitted">Name is required
       </mat-error>
     </mat-form-field>
